@@ -125,7 +125,11 @@ def main():
                 st.plotly_chart(figure_or_data=fig)
                 expander = st.beta_expander('Analysis')
                 expander.write(f'A majority of the members, {round(363/(363+242+200),2)*100}% are Mid-career Leaders. '
-                               f'However, gender distribution across the membership levels is relatively even.\n')
+                               f'However, gender distribution across the membership levels is relatively even, '
+                               f'males being dominating membership with little margin:\n '
+                               '* Young Leader: 50.98% male and 49.02% female'
+                               '* Mid-career Leader: 51.21% male and 48.79% female'
+                               '* Senior Leader: 53.99% male and 49.02% female')
     if granularity == "Country":
         country = st.sidebar.selectbox('country', df['Country'].unique())
         st.title(country)
